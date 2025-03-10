@@ -1,0 +1,5 @@
+{
+  "$schema": "../schema/navigation.json",
+  "app": "Start Designing",
+  "home": "Home"
+}

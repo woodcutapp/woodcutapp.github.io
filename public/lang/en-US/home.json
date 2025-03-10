@@ -1,0 +1,10 @@
+{
+  "$schema": "../schema/home.json",
+  "app.name": "WoodCut",
+  "app.slogan": "3D Design for Woodworking",
+  "app.text": "WoodCut is a completely free 3D design tool for woodworking projects. Create detailed 3D models, generate optimized cutlists, and export to various formats.",
+  "features": "What can you do with this app?",
+  "help": "Need Help?",
+  "help.text": "Please use the Github repository to report issues or request features, or join the Reddit community to ask questions or share your projects.",
+  "start": "Start"
+}

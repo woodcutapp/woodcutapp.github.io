@@ -1,0 +1,10 @@
+{
+  "$schema": "../schema/home.json",
+  "app.name": "WoodCut 木刻",
+  "app.slogan": "木工的3D設計",
+  "app.text": "WoodCut是一個完全免費的專業軟體。可製作精細的3D模型，並且能生成優化裁切清單，本軟體可匯出為其他檔案格式。",
+  "features": "這個應用程式可以做什麼？",
+  "help": "需要幫助？",
+  "help.text": "請使用Github回覆使用問題或給予建議。歡迎加入Reddit分享您的心得。",
+  "start": "開始"
+}

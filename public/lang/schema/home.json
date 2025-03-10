@@ -1,0 +1,42 @@
+{
+  "$ref": "#/definitions/HomeJsonSchema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "HomeJsonSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "app.name": {
+          "type": "string"
+        },
+        "app.slogan": {
+          "type": "string"
+        },
+        "app.text": {
+          "type": "string"
+        },
+        "features": {
+          "type": "string"
+        },
+        "help": {
+          "type": "string"
+        },
+        "help.text": {
+          "type": "string"
+        },
+        "start": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "app.name",
+        "app.slogan",
+        "app.text",
+        "features",
+        "help",
+        "help.text",
+        "start"
+      ],
+      "type": "object"
+    }
+  }
+}

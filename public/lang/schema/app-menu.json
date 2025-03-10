@@ -1,0 +1,314 @@
+{
+  "$ref": "#/definitions/AppMenuJsonSchema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "AppMenuJsonSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "back": {
+          "type": "string"
+        },
+        "edit": {
+          "type": "string"
+        },
+        "edit.copy": {
+          "type": "string"
+        },
+        "edit.delete": {
+          "type": "string"
+        },
+        "edit.duplicate": {
+          "type": "string"
+        },
+        "edit.history.redo": {
+          "type": "string"
+        },
+        "edit.history.undo": {
+          "type": "string"
+        },
+        "edit.new.board": {
+          "type": "string"
+        },
+        "edit.new.component": {
+          "type": "string"
+        },
+        "edit.new.cut": {
+          "type": "string"
+        },
+        "edit.paste": {
+          "type": "string"
+        },
+        "edit.transform.disable": {
+          "type": "string"
+        },
+        "edit.transform.enable": {
+          "type": "string"
+        },
+        "edit.visibility.all.hide": {
+          "type": "string"
+        },
+        "edit.visibility.all.show": {
+          "type": "string"
+        },
+        "edit.visibility.hide": {
+          "type": "string"
+        },
+        "edit.visibility.show": {
+          "type": "string"
+        },
+        "file": {
+          "type": "string"
+        },
+        "file.export": {
+          "type": "string"
+        },
+        "file.export.gtlf": {
+          "type": "string"
+        },
+        "file.export.obj": {
+          "type": "string"
+        },
+        "file.export.ply": {
+          "type": "string"
+        },
+        "file.export.png": {
+          "type": "string"
+        },
+        "file.export.stl": {
+          "type": "string"
+        },
+        "file.export.xslx": {
+          "type": "string"
+        },
+        "file.new": {
+          "type": "string"
+        },
+        "file.open": {
+          "type": "string"
+        },
+        "file.save": {
+          "type": "string"
+        },
+        "mode.dark": {
+          "type": "string"
+        },
+        "mode.light": {
+          "type": "string"
+        },
+        "selection": {
+          "type": "string"
+        },
+        "selection.find": {
+          "type": "string"
+        },
+        "selection.next": {
+          "type": "string"
+        },
+        "selection.previous": {
+          "type": "string"
+        },
+        "selection.select.all": {
+          "type": "string"
+        },
+        "selection.select.none": {
+          "type": "string"
+        },
+        "view": {
+          "type": "string"
+        },
+        "view.active": {
+          "type": "string"
+        },
+        "view.active.dimension": {
+          "type": "string"
+        },
+        "view.active.disable": {
+          "type": "string"
+        },
+        "view.active.enable": {
+          "type": "string"
+        },
+        "view.active.info": {
+          "type": "string"
+        },
+        "view.active.position": {
+          "type": "string"
+        },
+        "view.active.rotation": {
+          "type": "string"
+        },
+        "view.camera.orthographic": {
+          "type": "string"
+        },
+        "view.camera.perspective": {
+          "type": "string"
+        },
+        "view.drawer.disable": {
+          "type": "string"
+        },
+        "view.drawer.enable": {
+          "type": "string"
+        },
+        "view.focused.disable": {
+          "type": "string"
+        },
+        "view.focused.disabled": {
+          "type": "string"
+        },
+        "view.focused.enable": {
+          "type": "string"
+        },
+        "view.focused.enabled": {
+          "type": "string"
+        },
+        "view.grid.axis.none": {
+          "type": "string"
+        },
+        "view.grid.axis.primary.imperial": {
+          "type": "string"
+        },
+        "view.grid.axis.primary.metric": {
+          "type": "string"
+        },
+        "view.grid.axis.secondary.imperial": {
+          "type": "string"
+        },
+        "view.grid.axis.secondary.metric": {
+          "type": "string"
+        },
+        "view.grid.axis.tertiary.imperial": {
+          "type": "string"
+        },
+        "view.grid.axis.tertiary.metric": {
+          "type": "string"
+        },
+        "view.grid.disable": {
+          "type": "string"
+        },
+        "view.grid.disabled": {
+          "type": "string"
+        },
+        "view.grid.enable": {
+          "type": "string"
+        },
+        "view.grid.enabled": {
+          "type": "string"
+        },
+        "view.grid.x": {
+          "type": "string"
+        },
+        "view.grid.y": {
+          "type": "string"
+        },
+        "view.grid.z": {
+          "type": "string"
+        },
+        "view.ruler.disable": {
+          "type": "string"
+        },
+        "view.ruler.disabled": {
+          "type": "string"
+        },
+        "view.ruler.enable": {
+          "type": "string"
+        },
+        "view.ruler.enabled": {
+          "type": "string"
+        },
+        "view.ruler.point.a": {
+          "type": "string"
+        },
+        "view.ruler.point.b": {
+          "type": "string"
+        },
+        "view.ruler.point.clear": {
+          "type": "string"
+        },
+        "view.ruler.snap.disable": {
+          "type": "string"
+        },
+        "view.ruler.snap.enable": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "back",
+        "edit.copy",
+        "edit.delete",
+        "edit.duplicate",
+        "edit.history.redo",
+        "edit.history.undo",
+        "edit.new.board",
+        "edit.new.component",
+        "edit.new.cut",
+        "edit.paste",
+        "edit.transform.disable",
+        "edit.transform.enable",
+        "edit.visibility.all.hide",
+        "edit.visibility.all.show",
+        "edit.visibility.hide",
+        "edit.visibility.show",
+        "edit",
+        "file.export.gtlf",
+        "file.export.obj",
+        "file.export.ply",
+        "file.export.stl",
+        "file.export.png",
+        "file.export.xslx",
+        "file.export",
+        "file.new",
+        "file.open",
+        "file.save",
+        "file",
+        "mode.dark",
+        "mode.light",
+        "selection.find",
+        "selection.next",
+        "selection.previous",
+        "selection.select.all",
+        "selection.select.none",
+        "selection",
+        "view.active.dimension",
+        "view.active.disable",
+        "view.active.enable",
+        "view.active.info",
+        "view.active.position",
+        "view.active.rotation",
+        "view.active",
+        "view.camera.orthographic",
+        "view.camera.perspective",
+        "view.drawer.disable",
+        "view.drawer.enable",
+        "view.focused.disable",
+        "view.focused.disabled",
+        "view.focused.enable",
+        "view.focused.enabled",
+        "view.grid.axis.none",
+        "view.grid.axis.primary.imperial",
+        "view.grid.axis.primary.metric",
+        "view.grid.axis.secondary.imperial",
+        "view.grid.axis.secondary.metric",
+        "view.grid.axis.tertiary.imperial",
+        "view.grid.axis.tertiary.metric",
+        "view.grid.disable",
+        "view.grid.disabled",
+        "view.grid.enable",
+        "view.grid.enabled",
+        "view.grid.x",
+        "view.grid.y",
+        "view.grid.z",
+        "view.ruler.disable",
+        "view.ruler.disabled",
+        "view.ruler.enable",
+        "view.ruler.enabled",
+        "view.ruler.point.a",
+        "view.ruler.point.b",
+        "view.ruler.point.clear",
+        "view.ruler.snap.disable",
+        "view.ruler.snap.enable",
+        "view"
+      ],
+      "type": "object"
+    }
+  }
+}

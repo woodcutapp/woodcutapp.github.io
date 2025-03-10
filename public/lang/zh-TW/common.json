@@ -1,0 +1,10 @@
+{
+  "$schema": "../schema/common.json",
+  "app": "WoodCut 木刻",
+  "board": "板",
+  "cancel": "取消",
+  "component": "元件",
+  "copy": "{{name}} (複製)",
+  "cut": "切",
+  "find": "尋找"
+}

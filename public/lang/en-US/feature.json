@@ -1,0 +1,13 @@
+{
+  "$schema": "../schema/feature.json",
+  "cutlist": "Organize and Optimize Your Project",
+  "cutlist.description": "Generate a list of boards to purchase, and export exact measurements for each cut piece.",
+  "cuts": "Detailed and Precise Cuts",
+  "cuts.description": "Create various configurable cuts, like dovetails, dados, and tenons.",
+  "export": "Export Your Project",
+  "export.description": "Export your project to JSON, Excel and various 3D modeling formats.",
+  "ruler": "Measure and Visualize",
+  "ruler.description": "Make custom measurements for hard to visualize cuts.",
+  "transform": "Transform and Manipulate",
+  "transform.description": "Rotate, move, and scale your project to fit your needs."
+}

@@ -1,0 +1,22 @@
+{
+  "$ref": "#/definitions/NavigationJsonSchema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "NavigationJsonSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "app": {
+          "type": "string"
+        },
+        "home": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "app",
+        "home"
+      ],
+      "type": "object"
+    }
+  }
+}

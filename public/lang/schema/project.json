@@ -1,0 +1,994 @@
+{
+  "$ref": "#/definitions/ProjectJsonSchema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "ProjectJsonSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "board.cuts_one": {
+          "type": "string"
+        },
+        "board.cuts_other": {
+          "type": "string"
+        },
+        "board.face": {
+          "type": "string"
+        },
+        "board.face.back": {
+          "type": "string"
+        },
+        "board.face.bottom": {
+          "type": "string"
+        },
+        "board.face.front": {
+          "type": "string"
+        },
+        "board.face.left": {
+          "type": "string"
+        },
+        "board.face.right": {
+          "type": "string"
+        },
+        "board.face.top": {
+          "type": "string"
+        },
+        "board.grade": {
+          "type": "string"
+        },
+        "board.grade.rough": {
+          "type": "string"
+        },
+        "board.grade.s2s": {
+          "type": "string"
+        },
+        "board.grade.s4s": {
+          "type": "string"
+        },
+        "board.name": {
+          "type": "string"
+        },
+        "board.name.default": {
+          "type": "string"
+        },
+        "board.new": {
+          "type": "string"
+        },
+        "board.texture": {
+          "type": "string"
+        },
+        "board.type": {
+          "type": "string"
+        },
+        "common.add": {
+          "type": "string"
+        },
+        "common.angle": {
+          "type": "string"
+        },
+        "common.axis.x": {
+          "type": "string"
+        },
+        "common.axis.y": {
+          "type": "string"
+        },
+        "common.axis.z": {
+          "type": "string"
+        },
+        "common.board.count_one": {
+          "type": "string"
+        },
+        "common.board.count_other": {
+          "type": "string"
+        },
+        "common.board_one": {
+          "type": "string"
+        },
+        "common.board_other": {
+          "type": "string"
+        },
+        "common.boardfeet": {
+          "type": "string"
+        },
+        "common.collapse": {
+          "type": "string"
+        },
+        "common.collapse.all": {
+          "type": "string"
+        },
+        "common.component.count_one": {
+          "type": "string"
+        },
+        "common.component.count_other": {
+          "type": "string"
+        },
+        "common.component_one": {
+          "type": "string"
+        },
+        "common.component_other": {
+          "type": "string"
+        },
+        "common.copy": {
+          "type": "string"
+        },
+        "common.cost": {
+          "type": "string"
+        },
+        "common.curved": {
+          "type": "string"
+        },
+        "common.cutlist_one": {
+          "type": "string"
+        },
+        "common.cutlist_other": {
+          "type": "string"
+        },
+        "common.delete": {
+          "type": "string"
+        },
+        "common.depth": {
+          "type": "string"
+        },
+        "common.dimension": {
+          "type": "string"
+        },
+        "common.duplicate": {
+          "type": "string"
+        },
+        "common.edge": {
+          "type": "string"
+        },
+        "common.edge.back": {
+          "type": "string"
+        },
+        "common.edge.bottom": {
+          "type": "string"
+        },
+        "common.edge.front": {
+          "type": "string"
+        },
+        "common.edge.left": {
+          "type": "string"
+        },
+        "common.edge.right": {
+          "type": "string"
+        },
+        "common.edge.top": {
+          "type": "string"
+        },
+        "common.edit": {
+          "type": "string"
+        },
+        "common.expand": {
+          "type": "string"
+        },
+        "common.expand.all": {
+          "type": "string"
+        },
+        "common.height": {
+          "type": "string"
+        },
+        "common.hidden": {
+          "type": "string"
+        },
+        "common.hide": {
+          "type": "string"
+        },
+        "common.increment": {
+          "type": "string"
+        },
+        "common.infinity.symbol": {
+          "type": "string"
+        },
+        "common.info": {
+          "type": "string"
+        },
+        "common.item": {
+          "type": "string"
+        },
+        "common.length": {
+          "type": "string"
+        },
+        "common.lumber.finished": {
+          "type": "string"
+        },
+        "common.lumber.rough": {
+          "type": "string"
+        },
+        "common.lxw": {
+          "type": "string"
+        },
+        "common.measurement": {
+          "type": "string"
+        },
+        "common.name": {
+          "type": "string"
+        },
+        "common.notes": {
+          "type": "string"
+        },
+        "common.number": {
+          "type": "string"
+        },
+        "common.options": {
+          "type": "string"
+        },
+        "common.position": {
+          "type": "string"
+        },
+        "common.price": {
+          "type": "string"
+        },
+        "common.quantity": {
+          "type": "string"
+        },
+        "common.radius": {
+          "type": "string"
+        },
+        "common.reset": {
+          "type": "string"
+        },
+        "common.reverse": {
+          "type": "string"
+        },
+        "common.rotation": {
+          "type": "string"
+        },
+        "common.rounded": {
+          "type": "string"
+        },
+        "common.select": {
+          "type": "string"
+        },
+        "common.select.all": {
+          "type": "string"
+        },
+        "common.select.none": {
+          "type": "string"
+        },
+        "common.setting_one": {
+          "type": "string"
+        },
+        "common.setting_other": {
+          "type": "string"
+        },
+        "common.show": {
+          "type": "string"
+        },
+        "common.size": {
+          "type": "string"
+        },
+        "common.summary": {
+          "type": "string"
+        },
+        "common.thickness": {
+          "type": "string"
+        },
+        "common.total": {
+          "type": "string"
+        },
+        "common.width": {
+          "type": "string"
+        },
+        "component.boards_one": {
+          "type": "string"
+        },
+        "component.boards_other": {
+          "type": "string"
+        },
+        "component.name.default": {
+          "type": "string"
+        },
+        "component.new": {
+          "type": "string"
+        },
+        "cut.geometry": {
+          "type": "string"
+        },
+        "cut.geometry.box": {
+          "type": "string"
+        },
+        "cut.geometry.buffer": {
+          "type": "string"
+        },
+        "cut.geometry.cone": {
+          "type": "string"
+        },
+        "cut.geometry.cone.segments": {
+          "type": "string"
+        },
+        "cut.geometry.cylinder": {
+          "type": "string"
+        },
+        "cut.geometry.cylinder.radius.bottom": {
+          "type": "string"
+        },
+        "cut.geometry.cylinder.radius.top": {
+          "type": "string"
+        },
+        "cut.geometry.cylinder.segments": {
+          "type": "string"
+        },
+        "cut.geometry.sphere": {
+          "type": "string"
+        },
+        "cut.geometry.sphere.height.segments": {
+          "type": "string"
+        },
+        "cut.geometry.sphere.width.segments": {
+          "type": "string"
+        },
+        "cut.new": {
+          "type": "string"
+        },
+        "cut.options.edge.offset.back": {
+          "type": "string"
+        },
+        "cut.options.edge.offset.bottom": {
+          "type": "string"
+        },
+        "cut.options.edge.offset.front": {
+          "type": "string"
+        },
+        "cut.options.edge.offset.left": {
+          "type": "string"
+        },
+        "cut.options.edge.offset.right": {
+          "type": "string"
+        },
+        "cut.options.edge.offset.top": {
+          "type": "string"
+        },
+        "cut.options.moulding.type": {
+          "type": "string"
+        },
+        "cut.options.moulding.type.ogee": {
+          "type": "string"
+        },
+        "cut.options.moulding.type.ogee.roman": {
+          "type": "string"
+        },
+        "cut.options.position.horizontal": {
+          "type": "string"
+        },
+        "cut.options.position.vertical": {
+          "type": "string"
+        },
+        "cut.options.round.segments": {
+          "type": "string"
+        },
+        "cut.options.round.taper": {
+          "type": "string"
+        },
+        "cut.options.tenon.round": {
+          "type": "string"
+        },
+        "cut.type": {
+          "type": "string"
+        },
+        "cut.type.chamfer": {
+          "type": "string"
+        },
+        "cut.type.custom": {
+          "type": "string"
+        },
+        "cut.type.dado": {
+          "type": "string"
+        },
+        "cut.type.dovetail.pin": {
+          "type": "string"
+        },
+        "cut.type.dovetail.tail": {
+          "type": "string"
+        },
+        "cut.type.groove": {
+          "type": "string"
+        },
+        "cut.type.miter": {
+          "type": "string"
+        },
+        "cut.type.mortise": {
+          "type": "string"
+        },
+        "cut.type.moulding": {
+          "type": "string"
+        },
+        "cut.type.round": {
+          "type": "string"
+        },
+        "cut.type.tenon": {
+          "type": "string"
+        },
+        "cut.type.tongue": {
+          "type": "string"
+        },
+        "cutlist.board.longest": {
+          "type": "string"
+        },
+        "cutlist.board.widest": {
+          "type": "string"
+        },
+        "cutlist.name.default": {
+          "type": "string"
+        },
+        "cutlist.new": {
+          "type": "string"
+        },
+        "cutlist.output.boards": {
+          "type": "string"
+        },
+        "cutlist.output.cutpiece_one": {
+          "type": "string"
+        },
+        "cutlist.output.cutpiece_other": {
+          "type": "string"
+        },
+        "cutlist.output.overview": {
+          "type": "string"
+        },
+        "cutlist.output.stock": {
+          "type": "string"
+        },
+        "cutlist.output.stock.available": {
+          "type": "string"
+        },
+        "cutlist.output.stockpiece_one": {
+          "type": "string"
+        },
+        "cutlist.output.stockpiece_other": {
+          "type": "string"
+        },
+        "cutlist.output.wastepiece_one": {
+          "type": "string"
+        },
+        "cutlist.output.wastepiece_other": {
+          "type": "string"
+        },
+        "cutlist.settings.kerf": {
+          "type": "string"
+        },
+        "cutlist.settings.pad.length": {
+          "type": "string"
+        },
+        "cutlist.settings.pad.width": {
+          "type": "string"
+        },
+        "cutlist.stock.add": {
+          "type": "string"
+        },
+        "cutlist.stock.board.feet.available": {
+          "type": "string"
+        },
+        "cutlist.stock.board.feet.required": {
+          "type": "string"
+        },
+        "cutlist.stock.board.length.required": {
+          "type": "string"
+        },
+        "cutlist.stock.board.width.required": {
+          "type": "string"
+        },
+        "cutlist.stock.empty": {
+          "type": "string"
+        },
+        "cutlist.stock.error.boardfeet": {
+          "type": "string"
+        },
+        "cutlist.stock.error.length": {
+          "type": "string"
+        },
+        "cutlist.stock.error.width": {
+          "type": "string"
+        },
+        "cutlist.stock.quantity.note": {
+          "type": "string"
+        },
+        "cutlist.stock.total.price": {
+          "type": "string"
+        },
+        "cutlist.stock.total.quantity": {
+          "type": "string"
+        },
+        "cutlist.tab.boards": {
+          "type": "string"
+        },
+        "cutlist.tab.settings": {
+          "type": "string"
+        },
+        "cutlist.tab.stock": {
+          "type": "string"
+        },
+        "cutlist.tab.summary": {
+          "type": "string"
+        },
+        "measurement.imperial": {
+          "type": "string"
+        },
+        "measurement.imperial.ft": {
+          "type": "string"
+        },
+        "measurement.imperial.ft.number": {
+          "type": "string"
+        },
+        "measurement.imperial.in": {
+          "type": "string"
+        },
+        "measurement.imperial.in.number": {
+          "type": "string"
+        },
+        "measurement.imperial.inch.16th.long": {
+          "type": "string"
+        },
+        "measurement.imperial.inch.16th.short": {
+          "type": "string"
+        },
+        "measurement.imperial.inch.32nd.long": {
+          "type": "string"
+        },
+        "measurement.imperial.inch.32nd.short": {
+          "type": "string"
+        },
+        "measurement.imperial.inch.4th.long": {
+          "type": "string"
+        },
+        "measurement.imperial.inch.4th.short": {
+          "type": "string"
+        },
+        "measurement.imperial.inch.64th.long": {
+          "type": "string"
+        },
+        "measurement.imperial.inch.64th.short": {
+          "type": "string"
+        },
+        "measurement.imperial.inch.8th.long": {
+          "type": "string"
+        },
+        "measurement.imperial.inch.8th.short": {
+          "type": "string"
+        },
+        "measurement.imperial.inch.count_one": {
+          "type": "string"
+        },
+        "measurement.imperial.inch.count_other": {
+          "type": "string"
+        },
+        "measurement.imperial.inch.half.long": {
+          "type": "string"
+        },
+        "measurement.imperial.inch.half.short": {
+          "type": "string"
+        },
+        "measurement.imperial.inch.long": {
+          "type": "string"
+        },
+        "measurement.imperial.inch.short": {
+          "type": "string"
+        },
+        "measurement.imperial.inch_one": {
+          "type": "string"
+        },
+        "measurement.imperial.inch_other": {
+          "type": "string"
+        },
+        "measurement.imperial.symbol": {
+          "type": "string"
+        },
+        "measurement.metric": {
+          "type": "string"
+        },
+        "measurement.metric.centimeter.count_one": {
+          "type": "string"
+        },
+        "measurement.metric.centimeter.count_other": {
+          "type": "string"
+        },
+        "measurement.metric.centimeter_one": {
+          "type": "string"
+        },
+        "measurement.metric.centimeter_other": {
+          "type": "string"
+        },
+        "measurement.metric.cm": {
+          "type": "string"
+        },
+        "measurement.metric.cm.number": {
+          "type": "string"
+        },
+        "measurement.metric.micrometer": {
+          "type": "string"
+        },
+        "measurement.metric.millimeter": {
+          "type": "string"
+        },
+        "measurement.metric.symbol": {
+          "type": "string"
+        },
+        "viewcube.back.long": {
+          "type": "string"
+        },
+        "viewcube.back.short": {
+          "type": "string"
+        },
+        "viewcube.bottom.long": {
+          "type": "string"
+        },
+        "viewcube.bottom.short": {
+          "type": "string"
+        },
+        "viewcube.front.long": {
+          "type": "string"
+        },
+        "viewcube.front.short": {
+          "type": "string"
+        },
+        "viewcube.left.long": {
+          "type": "string"
+        },
+        "viewcube.left.short": {
+          "type": "string"
+        },
+        "viewcube.right.long": {
+          "type": "string"
+        },
+        "viewcube.right.short": {
+          "type": "string"
+        },
+        "viewcube.top.long": {
+          "type": "string"
+        },
+        "viewcube.top.short": {
+          "type": "string"
+        },
+        "wood.alder-rubra": {
+          "type": "string"
+        },
+        "wood.ash-oregon": {
+          "type": "string"
+        },
+        "wood.aspen-european": {
+          "type": "string"
+        },
+        "wood.basswood": {
+          "type": "string"
+        },
+        "wood.beech-american": {
+          "type": "string"
+        },
+        "wood.beech-european": {
+          "type": "string"
+        },
+        "wood.birch-yellow": {
+          "type": "string"
+        },
+        "wood.cedar-alaskan-yellow": {
+          "type": "string"
+        },
+        "wood.cedar-aromatic": {
+          "type": "string"
+        },
+        "wood.cedar-port-orford": {
+          "type": "string"
+        },
+        "wood.cedar-western-red": {
+          "type": "string"
+        },
+        "wood.cherry-american": {
+          "type": "string"
+        },
+        "wood.cypress": {
+          "type": "string"
+        },
+        "wood.fir-douglas": {
+          "type": "string"
+        },
+        "wood.hickory-shagbark": {
+          "type": "string"
+        },
+        "wood.mahogany-african": {
+          "type": "string"
+        },
+        "wood.mahogany-cuban": {
+          "type": "string"
+        },
+        "wood.mahogany-philippine": {
+          "type": "string"
+        },
+        "wood.maple-hard": {
+          "type": "string"
+        },
+        "wood.maple-soft": {
+          "type": "string"
+        },
+        "wood.oak-red": {
+          "type": "string"
+        },
+        "wood.oak-white": {
+          "type": "string"
+        },
+        "wood.pine-ponderosa": {
+          "type": "string"
+        },
+        "wood.pine-red": {
+          "type": "string"
+        },
+        "wood.pine-white": {
+          "type": "string"
+        },
+        "wood.pine-yellow": {
+          "type": "string"
+        },
+        "wood.poplar-yellow": {
+          "type": "string"
+        },
+        "wood.sapele": {
+          "type": "string"
+        },
+        "wood.spruce-sitka": {
+          "type": "string"
+        },
+        "wood.sycamore": {
+          "type": "string"
+        },
+        "wood.teak": {
+          "type": "string"
+        },
+        "wood.walnut-black": {
+          "type": "string"
+        },
+        "wood.walnut-butternut": {
+          "type": "string"
+        },
+        "wood.walnut-english": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "board.cuts_one",
+        "board.cuts_other",
+        "board.face.back",
+        "board.face.bottom",
+        "board.face.front",
+        "board.face.left",
+        "board.face.right",
+        "board.face.top",
+        "board.face",
+        "board.grade.rough",
+        "board.grade.s2s",
+        "board.grade.s4s",
+        "board.grade",
+        "board.name.default",
+        "board.name",
+        "board.new",
+        "board.texture",
+        "board.type",
+        "common.add",
+        "common.angle",
+        "common.axis.x",
+        "common.axis.y",
+        "common.axis.z",
+        "common.board_one",
+        "common.board_other",
+        "common.board.count_one",
+        "common.board.count_other",
+        "common.boardfeet",
+        "common.collapse.all",
+        "common.collapse",
+        "common.component_one",
+        "common.component_other",
+        "common.component.count_one",
+        "common.component.count_other",
+        "common.copy",
+        "common.cost",
+        "common.curved",
+        "common.cutlist_one",
+        "common.cutlist_other",
+        "common.delete",
+        "common.depth",
+        "common.dimension",
+        "common.duplicate",
+        "common.edge.back",
+        "common.edge.bottom",
+        "common.edge.front",
+        "common.edge.left",
+        "common.edge.right",
+        "common.edge.top",
+        "common.edge",
+        "common.edit",
+        "common.expand.all",
+        "common.expand",
+        "common.height",
+        "common.hide",
+        "common.hidden",
+        "common.increment",
+        "common.infinity.symbol",
+        "common.info",
+        "common.item",
+        "common.length",
+        "common.lumber.finished",
+        "common.lumber.rough",
+        "common.lxw",
+        "common.measurement",
+        "common.name",
+        "common.notes",
+        "common.number",
+        "common.options",
+        "common.position",
+        "common.price",
+        "common.quantity",
+        "common.radius",
+        "common.reset",
+        "common.reverse",
+        "common.rotation",
+        "common.rounded",
+        "common.select.all",
+        "common.select.none",
+        "common.select",
+        "common.setting_one",
+        "common.setting_other",
+        "common.show",
+        "common.size",
+        "common.summary",
+        "common.thickness",
+        "common.total",
+        "common.width",
+        "component.boards_one",
+        "component.boards_other",
+        "component.name.default",
+        "component.new",
+        "cut.geometry.box",
+        "cut.geometry.buffer",
+        "cut.geometry.cone.segments",
+        "cut.geometry.cone",
+        "cut.geometry.cylinder.radius.bottom",
+        "cut.geometry.cylinder.radius.top",
+        "cut.geometry.cylinder.segments",
+        "cut.geometry.cylinder",
+        "cut.geometry.sphere.height.segments",
+        "cut.geometry.sphere.width.segments",
+        "cut.geometry.sphere",
+        "cut.geometry",
+        "cut.new",
+        "cut.options.edge.offset.back",
+        "cut.options.edge.offset.bottom",
+        "cut.options.edge.offset.front",
+        "cut.options.edge.offset.left",
+        "cut.options.edge.offset.right",
+        "cut.options.edge.offset.top",
+        "cut.options.moulding.type.ogee.roman",
+        "cut.options.moulding.type.ogee",
+        "cut.options.moulding.type",
+        "cut.options.position.horizontal",
+        "cut.options.position.vertical",
+        "cut.options.round.segments",
+        "cut.options.round.taper",
+        "cut.options.tenon.round",
+        "cut.type.chamfer",
+        "cut.type.custom",
+        "cut.type.dado",
+        "cut.type.dovetail.pin",
+        "cut.type.dovetail.tail",
+        "cut.type.groove",
+        "cut.type.miter",
+        "cut.type.mortise",
+        "cut.type.moulding",
+        "cut.type.round",
+        "cut.type.tenon",
+        "cut.type.tongue",
+        "cut.type",
+        "cutlist.board.longest",
+        "cutlist.board.widest",
+        "cutlist.name.default",
+        "cutlist.new",
+        "cutlist.output.boards",
+        "cutlist.output.cutpiece_one",
+        "cutlist.output.cutpiece_other",
+        "cutlist.output.overview",
+        "cutlist.output.stock.available",
+        "cutlist.output.stock",
+        "cutlist.output.stockpiece_one",
+        "cutlist.output.stockpiece_other",
+        "cutlist.output.wastepiece_one",
+        "cutlist.output.wastepiece_other",
+        "cutlist.settings.kerf",
+        "cutlist.settings.pad.length",
+        "cutlist.settings.pad.width",
+        "cutlist.stock.add",
+        "cutlist.stock.board.feet.available",
+        "cutlist.stock.board.feet.required",
+        "cutlist.stock.board.length.required",
+        "cutlist.stock.board.width.required",
+        "cutlist.stock.empty",
+        "cutlist.stock.error.boardfeet",
+        "cutlist.stock.error.length",
+        "cutlist.stock.error.width",
+        "cutlist.stock.quantity.note",
+        "cutlist.stock.total.price",
+        "cutlist.stock.total.quantity",
+        "cutlist.tab.boards",
+        "cutlist.tab.settings",
+        "cutlist.tab.stock",
+        "cutlist.tab.summary",
+        "measurement.imperial.ft.number",
+        "measurement.imperial.ft",
+        "measurement.imperial.in.number",
+        "measurement.imperial.in",
+        "measurement.imperial.inch_one",
+        "measurement.imperial.inch_other",
+        "measurement.imperial.inch.16th.long",
+        "measurement.imperial.inch.16th.short",
+        "measurement.imperial.inch.32nd.long",
+        "measurement.imperial.inch.32nd.short",
+        "measurement.imperial.inch.4th.long",
+        "measurement.imperial.inch.4th.short",
+        "measurement.imperial.inch.64th.long",
+        "measurement.imperial.inch.64th.short",
+        "measurement.imperial.inch.8th.long",
+        "measurement.imperial.inch.8th.short",
+        "measurement.imperial.inch.count_one",
+        "measurement.imperial.inch.count_other",
+        "measurement.imperial.inch.half.long",
+        "measurement.imperial.inch.half.short",
+        "measurement.imperial.inch.long",
+        "measurement.imperial.inch.short",
+        "measurement.imperial.symbol",
+        "measurement.imperial",
+        "measurement.metric.centimeter_one",
+        "measurement.metric.centimeter_other",
+        "measurement.metric.centimeter.count_one",
+        "measurement.metric.centimeter.count_other",
+        "measurement.metric.cm.number",
+        "measurement.metric.cm",
+        "measurement.metric.micrometer",
+        "measurement.metric.millimeter",
+        "measurement.metric.symbol",
+        "measurement.metric",
+        "viewcube.back.long",
+        "viewcube.back.short",
+        "viewcube.bottom.long",
+        "viewcube.bottom.short",
+        "viewcube.front.long",
+        "viewcube.front.short",
+        "viewcube.left.long",
+        "viewcube.left.short",
+        "viewcube.right.long",
+        "viewcube.right.short",
+        "viewcube.top.long",
+        "viewcube.top.short",
+        "wood.alder-rubra",
+        "wood.ash-oregon",
+        "wood.aspen-european",
+        "wood.basswood",
+        "wood.beech-american",
+        "wood.beech-european",
+        "wood.birch-yellow",
+        "wood.cedar-alaskan-yellow",
+        "wood.cedar-aromatic",
+        "wood.cedar-port-orford",
+        "wood.cedar-western-red",
+        "wood.cherry-american",
+        "wood.cypress",
+        "wood.fir-douglas",
+        "wood.hickory-shagbark",
+        "wood.mahogany-african",
+        "wood.mahogany-cuban",
+        "wood.mahogany-philippine",
+        "wood.maple-hard",
+        "wood.maple-soft",
+        "wood.oak-red",
+        "wood.oak-white",
+        "wood.pine-ponderosa",
+        "wood.pine-red",
+        "wood.pine-white",
+        "wood.pine-yellow",
+        "wood.poplar-yellow",
+        "wood.sapele",
+        "wood.spruce-sitka",
+        "wood.sycamore",
+        "wood.teak",
+        "wood.walnut-black",
+        "wood.walnut-butternut",
+        "wood.walnut-english"
+      ],
+      "type": "object"
+    }
+  }
+}

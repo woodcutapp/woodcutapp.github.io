@@ -1,0 +1,13 @@
+{
+  "$schema": "../schema/feature.json",
+  "cutlist": "優化裁切清單",
+  "cutlist.description": "可產生精確尺寸的裁切清單。",
+  "cuts": "詳細而精確的切割",
+  "cuts.description": "創建各種裁切，如半對半、槽口和榫頭。",
+  "export": "匯出專案",
+  "export.description": "將專案匯出為JSON、Excel和各種3D格式。",
+  "ruler": "視覺化的量測",
+  "ruler.description": "為量測提供直觀的介面。",
+  "transform": "3D操作",
+  "transform.description": "旋轉、移動和縮放您的設計以滿足您的需求。"
+}

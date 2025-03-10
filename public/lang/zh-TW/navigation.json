@@ -1,0 +1,5 @@
+{
+  "$schema": "../schema/navigation.json",
+  "app": "免費使用",
+  "home": "首頁"
+}

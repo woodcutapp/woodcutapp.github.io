@@ -1,0 +1,54 @@
+{
+  "$ref": "#/definitions/FeatureJsonSchema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "FeatureJsonSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "cutlist": {
+          "type": "string"
+        },
+        "cutlist.description": {
+          "type": "string"
+        },
+        "cuts": {
+          "type": "string"
+        },
+        "cuts.description": {
+          "type": "string"
+        },
+        "export": {
+          "type": "string"
+        },
+        "export.description": {
+          "type": "string"
+        },
+        "ruler": {
+          "type": "string"
+        },
+        "ruler.description": {
+          "type": "string"
+        },
+        "transform": {
+          "type": "string"
+        },
+        "transform.description": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "cutlist",
+        "cutlist.description",
+        "cuts",
+        "cuts.description",
+        "export",
+        "export.description",
+        "ruler",
+        "ruler.description",
+        "transform",
+        "transform.description"
+      ],
+      "type": "object"
+    }
+  }
+}

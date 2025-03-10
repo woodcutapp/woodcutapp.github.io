@@ -1,0 +1,42 @@
+{
+  "$ref": "#/definitions/CommonJsonSchema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "CommonJsonSchema": {
+      "additionalProperties": false,
+      "properties": {
+        "app": {
+          "type": "string"
+        },
+        "board": {
+          "type": "string"
+        },
+        "cancel": {
+          "type": "string"
+        },
+        "component": {
+          "type": "string"
+        },
+        "copy": {
+          "type": "string"
+        },
+        "cut": {
+          "type": "string"
+        },
+        "find": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "app",
+        "board",
+        "cancel",
+        "component",
+        "copy",
+        "cut",
+        "find"
+      ],
+      "type": "object"
+    }
+  }
+}

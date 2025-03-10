@@ -1,0 +1,10 @@
+{
+  "$schema": "../schema/common.json",
+  "app": "WoodCut",
+  "board": "Board",
+  "cancel": "Cancel",
+  "component": "Component",
+  "copy": "{{name}} (Copy)",
+  "cut": "Cut",
+  "find": "Find"
+}
