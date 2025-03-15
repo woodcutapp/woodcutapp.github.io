@@ -15,7 +15,7 @@
     "@mui/icons-material": "^6.0.0",
     "@mui/material": "^6.0.0",
     "@tanstack/react-router": "^1.0.0",
-    "@woodcutapp/wasm": "^0.1.0",
+    "@woodcutapp/wasm": "^0.1.1",
     "@woodcutapp/woodcutapp": "^0.1.0",
     "i18next": "^24.0.0",
     "i18next-browser-languagedetector": "^8.0.0",

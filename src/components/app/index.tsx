@@ -1,5 +1,5 @@
 import { Stack, useTheme } from '@mui/material'
-import wasmInit, { calculate_cutlist, export_cutlist, export_project } from '@woodcutapp/wasm'
+import { calculate_cutlist, export_cutlist, export_project } from '@woodcutapp/wasm'
 import { assertIsCutlist, check, generateProjectState, generateRenderState, ProjectComponent, ProjectState, RenderState, cutlistChange, assertIsBoard, projectGetCutlist, getWoodImage } from '@woodcutapp/woodcutapp'
 import { useCallback, useEffect, useState } from 'react'
 
@@ -8,8 +8,6 @@ import { AppMenuComponent } from '@/components/app/app-menu'
 import { FindComponent } from '@/components/app/find'
 import { downloadFile } from '@/functions/util'
 import { historyAdd, projectSet, useAppStore } from '@/store'
-
-await wasmInit()
 
 export function AppComponent() {
   const project = useAppStore(state => state.project)
