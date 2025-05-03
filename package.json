@@ -6,6 +6,13 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "lang": "npm run lang:app-menu && npm run lang:common && npm run lang:feature && npm run lang:home && npm run lang:navigation && npm run lang:project",
+    "lang:app-menu": "npx ts-json-schema-generator -p src/i18n/schema.ts -t AppMenuJsonSchema -f tsconfig.app.json  > ./public/lang/schema/app-menu.json",
+    "lang:common": "npx ts-json-schema-generator -p src/i18n/schema.ts -t CommonJsonSchema -f tsconfig.app.json  > ./public/lang/schema/common.json",
+    "lang:feature": "npx ts-json-schema-generator -p src/i18n/schema.ts -t FeatureJsonSchema -f tsconfig.app.json  > ./public/lang/schema/feature.json",
+    "lang:home": "npx ts-json-schema-generator -p src/i18n/schema.ts -t HomeJsonSchema -f tsconfig.app.json  > ./public/lang/schema/home.json",
+    "lang:navigation": "npx ts-json-schema-generator -p src/i18n/schema.ts -t NavigationJsonSchema -f tsconfig.app.json  > ./public/lang/schema/navigation.json",
+    "lang:project": "npx ts-json-schema-generator -p src/i18n/schema.ts -t ProjectJsonSchema -f tsconfig.app.json  > ./public/lang/schema/project.json",
     "lint": "eslint .",
     "preview": "vite preview"
   },
