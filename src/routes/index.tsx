@@ -1,5 +1,5 @@
 import { GitHub, Reddit } from '@mui/icons-material'
-import { Button, Container, Grid2, Stack, Typography } from '@mui/material'
+import { Button, Container, Grid, Stack, Typography } from '@mui/material'
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { useTranslation } from 'react-i18next'
 
@@ -18,8 +18,8 @@ function Home() {
       <NavigationComponent />
       <Container component="main" sx={{ flexGrow: 1, py: 8 }}>
         <Stack spacing={8}>
-          <Grid2 container alignItems="center" spacing={4}>
-            <Grid2 size={{ xs: 12, md: 6 }}>
+          <Grid container alignItems="center" spacing={4}>
+            <Grid size={{ xs: 12, md: 6 }}>
               <Stack spacing={4}>
                 <Stack direction="row" spacing={2}>
                   <LogoComponent sx={{ height: 100 }} />
@@ -43,11 +43,11 @@ function Home() {
                   </Button>
                 </Stack>
               </Stack>
-            </Grid2>
-            <Grid2 size={{ xs: 12, md: 6 }}>
+            </Grid>
+            <Grid size={{ xs: 12, md: 6 }}>
               <img src="/images/dresser.png" width="100%" />
-            </Grid2>
-          </Grid2>
+            </Grid>
+          </Grid>
           <Stack spacing={4} textAlign="center">
             <Typography variant="h2">{t('home:features')}</Typography>
             <FeaturesComponent />

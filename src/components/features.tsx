@@ -1,5 +1,5 @@
 import { Carpenter, Dashboard, ImportExport, SquareFoot, Transform } from '@mui/icons-material'
-import { Grid2, List, ListItem, ListItemButton, ListItemIcon, ListItemProps, ListItemText, Paper, useColorScheme } from '@mui/material'
+import { Grid, List, ListItem, ListItemButton, ListItemIcon, ListItemProps, ListItemText, Paper, useColorScheme } from '@mui/material'
 import { useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -31,13 +31,13 @@ export function FeaturesComponent() {
   }), [])
 
   return (
-    <Grid2 container spacing={4}>
-      <Grid2 size={{ xs: 12, md: 8 }}>
+    <Grid container spacing={4}>
+      <Grid size={{ xs: 12, md: 8 }}>
         <Paper elevation={4} sx={({ shape }) => ({ borderRadius: shape.borderRadius, overflow: 'hidden' })}>
           <img src={src} width="100%" style={{ display: 'block' }} />
         </Paper>
-      </Grid2>
-      <Grid2 size={{ xs: 12, md: 4 }}>
+      </Grid>
+      <Grid size={{ xs: 12, md: 4 }}>
         <List disablePadding>
           <ListItem {...ListItemProps}>
             <ListItemButton
@@ -115,7 +115,7 @@ export function FeaturesComponent() {
             </ListItemButton>
           </ListItem>
         </List>
-      </Grid2>
-    </Grid2>
+      </Grid>
+    </Grid>
   )
 }
