@@ -1,22 +1,32 @@
-import { TanStackRouterVite } from '@tanstack/router-plugin/vite'
-import react from '@vitejs/plugin-react'
+import babel from '@rolldown/plugin-babel'
+import { tanstackRouter } from '@tanstack/router-plugin/vite'
+import react, { reactCompilerPreset } from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
-import topLevelAwait from 'vite-plugin-top-level-await'
 import wasm from 'vite-plugin-wasm'
 
-export default defineConfig({
+import { fileURLToPath } from 'url'
+
+export default defineConfig(({ mode }) => ({
+  build: {
+    sourcemap: mode === 'development',
+  },
+  envDir: 'env',
+  logLevel: 'error',
   plugins: [
     wasm(),
-    topLevelAwait(),
-    TanStackRouterVite({ autoCodeSplitting: true }),
+    tanstackRouter({ autoCodeSplitting: true }),
+    babel({
+      presets: [reactCompilerPreset()],
+    }),
     react(),
   ],
   resolve: {
     alias: [
       {
         find: '@',
-        replacement: '/src',
+        replacement: fileURLToPath(new URL('./src', import.meta.url)),
       },
     ],
   },
-})
+  server: { port: 4200 },
+}))

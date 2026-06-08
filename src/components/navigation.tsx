@@ -1,5 +1,5 @@
 import MenuIcon from '@mui/icons-material/Menu'
-import { AppBar, Box, Button, ButtonBase, ButtonProps, Container, IconButton, Menu, MenuItem, MenuItemProps, Stack, Toolbar, Typography } from '@mui/material'
+import { AppBar, Box, Button, ButtonBase, type ButtonProps, Container, IconButton, Menu, MenuItem, type MenuItemProps, Stack, Toolbar, Typography } from '@mui/material'
 import { Link, linkOptions } from '@tanstack/react-router'
 import { useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -44,7 +44,7 @@ export function NavigationComponent() {
         <Toolbar disableGutters variant="dense">
           <ButtonBase component={Link} to="/" sx={{ mr: 2, borderRadius: '100%' }}>
             <LogoComponent sx={{ width: 40, height: 40 }} />
-            <Typography variant="h6" component="div" noWrap minWidth={150} ml={2}>
+            <Typography variant="h6" component="div" noWrap sx={{ minWidth: 150, ml: 2 }}>
               {t('app')}
             </Typography>
           </ButtonBase>
@@ -70,7 +70,17 @@ export function NavigationComponent() {
               ))}
             </Menu>
           </Box>
-          <Stack alignItems="center" direction="row" display={{ xs: 'none', md: 'flex' }} justifyContent="flex-start" ml={4} spacing={2} width="100%">
+          <Stack
+            direction="row"
+            spacing={2}
+            sx={{
+              alignItems: 'center',
+              display: { xs: 'none', md: 'flex' },
+              justifyContent: 'flex-start',
+              ml: 4,
+              width: '100%',
+            }}
+          >
             {buttons.map(({ label, ...o }, i) => (
               <Button key={i} {...o}>
                 {label}

@@ -1,6 +1,7 @@
 import { CssBaseline, StyledEngineProvider, ThemeProvider } from '@mui/material'
-import { Outlet, createRootRoute } from '@tanstack/react-router'
+import { createRootRoute, Outlet } from '@tanstack/react-router'
 
+import { useEffectsAnalytics } from '@/hooks/analytics'
 import { theme } from '@/theme'
 
 export const Route = createRootRoute({
@@ -8,6 +9,7 @@ export const Route = createRootRoute({
 })
 
 function RootComponent() {
+  useEffectsAnalytics()
   return (
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme} defaultMode="system">

@@ -11,6 +11,7 @@ export const useActiveElement = () => {
     window.addEventListener('focus', onFocus, true)
     window.addEventListener('blur', onBlur, true)
 
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setListenersReady(true)
 
     return () => {

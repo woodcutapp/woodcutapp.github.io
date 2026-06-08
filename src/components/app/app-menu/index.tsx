@@ -1,7 +1,7 @@
 import { Home } from '@mui/icons-material'
-import { AppBar, Box, Button, ButtonProps, IconButton, MenuItemProps, MenuListProps, MenuProps, Toolbar, Tooltip } from '@mui/material'
+import { AppBar, Box, Button, type ButtonProps, IconButton, type MenuItemProps, type MenuListProps, type MenuProps, Toolbar, Tooltip } from '@mui/material'
 import { Link } from '@tanstack/react-router'
-import { Project, ProjectState, RenderState } from '@woodcutapp/woodcutapp'
+import { type Project, type ProjectState, type RenderState } from '@woodcutapp/woodcutapp'
 import { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -61,14 +61,16 @@ export function AppMenuComponent({ exportProject, project, projectSet, projectSt
       vertical: 'top',
       horizontal: 'left',
     },
-    PaperProps: {
-      square: true,
-      sx: ({ palette }) => ({
-        borderColor: palette.divider,
-        borderStyle: 'solid',
-        borderWidth: 1,
-        transform: 'translateY(6px)',
-      }),
+    slotProps: {
+      paper: {
+        square: true,
+        sx: ({ palette }) => ({
+          borderColor: palette.divider,
+          borderStyle: 'solid',
+          borderWidth: 1,
+          transform: 'translateY(6px)',
+        }),
+      },
     },
   }), [])
 

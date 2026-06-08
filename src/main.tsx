@@ -1,6 +1,6 @@
 import '@/i18n'
 
-import { RouterProvider, createHashHistory, createRouter } from '@tanstack/react-router'
+import { createHashHistory, createRouter, RouterProvider } from '@tanstack/react-router'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 
@@ -18,11 +18,16 @@ const router = createRouter({
   defaultPreload: 'intent',
 })
 
-const rootElement = document.getElementById('root')!
-const root = createRoot(rootElement)
+const rootElement = document.getElementById('root')
+if (rootElement) {
+  const root = createRoot(rootElement)
 
-root.render((
-  <StrictMode>
-    <RouterProvider router={router} />
-  </StrictMode>
-))
+  root.render((
+    <StrictMode>
+      <RouterProvider router={router} />
+    </StrictMode>
+  ))
+}
+else {
+  throw Error('Unable to find root element')
+}

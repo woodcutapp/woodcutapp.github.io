@@ -1,5 +1,5 @@
 import { Carpenter, Dashboard, ImportExport, SquareFoot, Transform } from '@mui/icons-material'
-import { Grid, List, ListItem, ListItemButton, ListItemIcon, ListItemProps, ListItemText, Paper, useColorScheme } from '@mui/material'
+import { Grid, List, ListItem, ListItemButton, ListItemIcon, type ListItemProps, ListItemText, Paper, useColorScheme } from '@mui/material'
 import { useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 

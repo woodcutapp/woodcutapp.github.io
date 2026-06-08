@@ -1,5 +1,5 @@
 import { Button, Card, CardActionArea, CardContent, CardHeader, Dialog, DialogActions, DialogContent, Stack, TextField } from '@mui/material'
-import { boardGetCut, BoardSummary, componentGetBoard, ComponentSummary, CutSummary, Project, projectGetComponent, ProjectState, RenderState } from '@woodcutapp/woodcutapp'
+import { boardGetCut, BoardSummary, componentGetBoard, ComponentSummary, CutSummary, type Project, projectGetComponent, type ProjectState, type RenderState } from '@woodcutapp/woodcutapp'
 import { useCallback, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -61,7 +61,7 @@ export function FindComponent({ project, projectState, projectStateSet }: FindCo
           active: [
             true,
             [indexes[0], null, null],
-            projectState.active[2] || 0,
+            projectState.active[2] ?? 0,
           ],
         })
         break
@@ -72,7 +72,7 @@ export function FindComponent({ project, projectState, projectStateSet }: FindCo
           active: [
             true,
             [indexes[0], indexes[1], null],
-            projectState.active[2] || 0,
+            projectState.active[2] ?? 0,
           ],
           expanded: [
             [...projectState.expanded[0].filter(componentIndex => componentIndex !== indexes[0]), indexes[0]],
@@ -87,7 +87,7 @@ export function FindComponent({ project, projectState, projectStateSet }: FindCo
           active: [
             true,
             [indexes[0], indexes[1], indexes[2]],
-            projectState.active[2] || 0,
+            projectState.active[2] ?? 0,
           ],
           expanded: [
             [...projectState.expanded[0].filter(componentIndex => componentIndex !== indexes[0]), indexes[0]],

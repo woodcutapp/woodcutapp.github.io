@@ -1,7 +1,7 @@
-export type i18nResourceNavigation = { [key in i18nNamespaceNavigation]: Record<i18nNamespaceNavigationKeys, string> }
+export type i18nResourceNavigation = Record<i18nNamespaceNavigation, Record<i18nNamespaceNavigationKeys, string>>
 
 export type i18nNamespaceNavigation = 'navigation'
 
-export type i18nNamespaceNavigationKeys =
-  | 'app'
-  | 'home'
+export type i18nNamespaceNavigationKeys
+  = | 'app'
+    | 'home'

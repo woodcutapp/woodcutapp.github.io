@@ -1,12 +1,15 @@
+/* eslint-disable react-hooks/refs */
+/* TODO: Fix this. */
+
 import { ChevronRight } from '@mui/icons-material'
-import { Button, ButtonProps, Menu, MenuItem, MenuItemProps, MenuList, MenuListProps, MenuProps, Typography } from '@mui/material'
-import { Project, ProjectState, RenderState } from '@woodcutapp/woodcutapp'
+import { Button, type ButtonProps, Menu, MenuItem, type MenuItemProps, MenuList, type MenuListProps, type MenuProps, Typography } from '@mui/material'
+import { type Project, type ProjectState, type RenderState } from '@woodcutapp/woodcutapp'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { getAppMenuHotkeyLabel } from '@/functions/app-menu-hotkeys'
 import { downloadFile } from '@/functions/util'
-import { UseAppMenuReturn } from '@/hooks/app-menu'
+import { type UseAppMenuReturn } from '@/hooks/app-menu'
 
 interface AppMenuFileComponentProps extends Pick<UseAppMenuReturn, 'handleFileExportGtlf' | 'handleFileExportObj' | 'handleFileExportPly' | 'handleFileExportStl' | 'handleFileExportPng' | 'handleFileExportXlsx' | 'handleFileNew' | 'handleFileOpen' | 'handleFileSave'> {
   project: Project
@@ -71,21 +74,21 @@ export function AppMenuFileComponent({ handleFileExportObj, handleFileExportPly,
   useEffect(() => {
     if (renderState.exporter[1]) {
       renderStateSet({ ...renderState, exporter: [null, null, null] })
-      handleExportString(renderState.exporter[1])
+      void handleExportString(renderState.exporter[1])
     }
   }, [handleExportString, renderState, renderStateSet])
 
   useEffect(() => {
     if (renderState.exporter[2]) {
       renderStateSet({ ...renderState, exporter: [null, null, null] })
-      handleExportArrayBuffer(renderState.exporter[2])
+      void handleExportArrayBuffer(renderState.exporter[2])
     }
   }, [handleExportArrayBuffer, project.name, renderState, renderStateSet])
 
   useEffect(() => {
     if (renderState.screenshot[1]) {
       renderStateSet({ ...renderState, screenshot: [false, null] })
-      handleExportScreenshot(renderState.screenshot[1])
+      void handleExportScreenshot(renderState.screenshot[1])
     }
   }, [handleExportScreenshot, renderState, renderStateSet])
 
@@ -98,12 +101,12 @@ export function AppMenuFileComponent({ handleFileExportObj, handleFileExportPly,
         <MenuList {...MenuListProps}>
           <MenuItem {...MenuItemProps} onClick={() => closeMenu(handleFileNew)}>
             <Typography>{t('app-menu:file.new')}</Typography>
-            <Typography ml={1} color="gray">{getAppMenuHotkeyLabel('app-menu:file.new')}</Typography>
+            <Typography sx={{ color: 'gray', ml: 1 }}>{getAppMenuHotkeyLabel('app-menu:file.new')}</Typography>
           </MenuItem>
           <MenuItem {...MenuItemProps} onClick={() => inputRef.current?.click()}>
             <input
               ref={inputRef}
-              accept=".woodcut"
+              accept=".woodcut,.json"
               type="file"
               style={{ display: 'none' }}
               onChange={() => {
@@ -112,11 +115,11 @@ export function AppMenuFileComponent({ handleFileExportObj, handleFileExportPly,
               }}
             />
             <Typography>{t('app-menu:file.open')}</Typography>
-            <Typography ml={1} color="gray">{getAppMenuHotkeyLabel('app-menu:file.open')}</Typography>
+            <Typography sx={{ color: 'gray', ml: 1 }}>{getAppMenuHotkeyLabel('app-menu:file.open')}</Typography>
           </MenuItem>
           <MenuItem {...MenuItemProps} ref={exportMenuItemRef} onClick={() => closeMenu(handleFileSave)}>
             <Typography>{t('app-menu:file.save')}</Typography>
-            <Typography ml={1} color="gray">{getAppMenuHotkeyLabel('app-menu:file.save')}</Typography>
+            <Typography sx={{ color: 'gray', ml: 1 }}>{getAppMenuHotkeyLabel('app-menu:file.save')}</Typography>
           </MenuItem>
           <MenuItem {...MenuItemProps} onClick={() => setExportMenuOpen(true)}>
             <Typography>{t('app-menu:file.export')}</Typography>

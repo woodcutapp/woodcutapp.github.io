@@ -1,6 +1,6 @@
 import { SvgIcon } from '@mui/material'
-import { SvgIconProps } from '@mui/material/SvgIcon'
-import { FC } from 'react'
+import { type SvgIconProps } from '@mui/material/SvgIcon'
+import { type FC } from 'react'
 
 export const LogoComponent: FC<SvgIconProps> = (props) => {
   const { style = { width: 'auto' } } = props

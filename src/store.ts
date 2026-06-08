@@ -1,5 +1,5 @@
-import { Component, Board, Cut, generateProject, Project } from '@woodcutapp/woodcutapp'
-import { create, StateCreator } from 'zustand'
+import { type Board, type Component, type Cut, generateProject, type Project } from '@woodcutapp/woodcutapp'
+import { create, type StateCreator } from 'zustand'
 import { createJSONStorage, persist } from 'zustand/middleware'
 
 interface State {

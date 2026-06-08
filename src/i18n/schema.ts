@@ -1,10 +1,10 @@
-import { i18nNamespaceProjectKeys } from '@woodcutapp/woodcutapp'
+import { type i18nNamespaceProjectKeys } from '@woodcutapp/woodcutapp'
 
-import { i18nNamespaceAppMenuKeys } from '@/i18n/app-menu'
-import { i18nNamespaceCommonKeys } from '@/i18n/common'
-import { i18nNamespaceFeatureKeys } from '@/i18n/feature'
-import { i18nNamespaceHomeKeys } from '@/i18n/home'
-import { i18nNamespaceNavigationKeys } from '@/i18n/navigation'
+import { type i18nNamespaceAppMenuKeys } from '@/i18n/app-menu'
+import { type i18nNamespaceCommonKeys } from '@/i18n/common'
+import { type i18nNamespaceFeatureKeys } from '@/i18n/feature'
+import { type i18nNamespaceHomeKeys } from '@/i18n/home'
+import { type i18nNamespaceNavigationKeys } from '@/i18n/navigation'
 
 export type AppMenuJsonSchema = Record<i18nNamespaceAppMenuKeys, string>
 export type CommonJsonSchema = Record<i18nNamespaceCommonKeys, string>

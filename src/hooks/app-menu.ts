@@ -1,9 +1,11 @@
-import { assertIsBoard, assertIsComponent, assertIsNonNullable, assertIsProject, assertIsString, boardAddCut, boardChange, boardGetCut, check, componentAddBoard, componentChange, componentGetBoard, cutChange, GridAxis, Project, projectAddComponent, projectGetActive, projectGetComponent, ProjectState, RenderState, useProjectAdd, useProjectRemove } from '@woodcutapp/woodcutapp'
+import { assertIsBoard, assertIsComponent, assertIsNonNullable, assertIsProject, assertIsString, boardAddCut, boardChange, boardGetCut, check, componentAddBoard, componentChange, componentGetBoard, cutChange, type GridAxis, type Project, projectAddComponent, projectGetActive, projectGetComponent, type ProjectState, type RenderState, useProjectAdd, useProjectRemove } from '@woodcutapp/woodcutapp'
 import { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { downloadFile } from '@/functions/util'
 import { alertAdd, clipboardSet, findSet, historyRedo, historyUndo, useAppStore } from '@/store'
+
+import { migrateProject } from '../functions/migrate-project'
 
 export interface UseAppMenuProps {
   exportProject: () => void
@@ -407,9 +409,9 @@ export function useAppMenu(props: UseAppMenuProps): UseAppMenuReturn {
     }
   }, [renderState, renderStateSet])
 
-  const handleFileExportXlsx = useCallback(async () => {
+  const handleFileExportXlsx = useCallback(() => {
     try {
-      await exportProject()
+      exportProject()
       alertAdd('Exported project to XLSX', 'success')
     }
     catch (error) {
@@ -419,7 +421,7 @@ export function useAppMenu(props: UseAppMenuProps): UseAppMenuReturn {
   }, [exportProject])
 
   const handleFileNew = useCallback(() => {
-    window.open('/app', '_blank')
+    window.open('/#/app', '_blank')
   }, [])
 
   const handleFileOpen = useCallback((input: HTMLInputElement | null) => {
@@ -434,7 +436,9 @@ export function useAppMenu(props: UseAppMenuProps): UseAppMenuReturn {
       reader.onload = (event) => {
         assertIsNonNullable(event.target)
         assertIsString(event.target.result)
-        const project = JSON.parse(event.target.result)
+        const parsed: unknown = JSON.parse(event.target.result)
+        const project = migrateProject(parsed)
+
         assertIsProject(project)
         projectSet(project)
         alertAdd(`Opened project: ${project.name}`, 'success')
@@ -821,7 +825,7 @@ export function useAppMenu(props: UseAppMenuProps): UseAppMenuReturn {
       active: [
         !projectState.active[0],
         projectState.active[1],
-        projectState.active[2] || 0,
+        projectState.active[2] ?? 0,
       ],
     })
   }, [projectState, projectStateSet])

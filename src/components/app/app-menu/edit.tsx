@@ -1,10 +1,13 @@
-import { Button, ButtonProps, Divider, Menu, MenuItem, MenuItemProps, MenuList, MenuListProps, MenuProps, Typography } from '@mui/material'
-import { boardGetCut, componentGetBoard, Project, projectGetActive, projectGetComponent, ProjectState, RenderState } from '@woodcutapp/woodcutapp'
+/* eslint-disable react-hooks/refs */
+/* TODO: Fix this. */
+
+import { Button, type ButtonProps, Divider, Menu, MenuItem, type MenuItemProps, MenuList, type MenuListProps, type MenuProps, Typography } from '@mui/material'
+import { boardGetCut, componentGetBoard, type Project, projectGetActive, projectGetComponent, type ProjectState, type RenderState } from '@woodcutapp/woodcutapp'
 import { useCallback, useMemo, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { getAppMenuHotkeyLabel } from '@/functions/app-menu-hotkeys'
-import { UseAppMenuReturn } from '@/hooks/app-menu'
+import { type UseAppMenuReturn } from '@/hooks/app-menu'
 
 interface AppMenuEditComponentProps extends Pick<UseAppMenuReturn, 'handleEditCopy' | 'handleEditDelete' | 'handleEditDuplicate' | 'handleEditHistoryRedo' | 'handleEditHistoryUndo' | 'handleEditNew' | 'handleEditPaste' | 'handleEditTransform' | 'handleEditVisibilityAllHide' | 'handleEditVisibilityAllShow' | 'handleEditVisibilityToggle'> {
   project: Project
@@ -73,38 +76,38 @@ export function AppMenuEditComponent({ handleEditCopy, handleEditDelete, handleE
         <MenuList {...MenuListProps}>
           <MenuItem {...MenuItemProps} onClick={() => closeMenu(handleEditNew)}>
             <Typography>{menuItemNewLabel}</Typography>
-            <Typography ml={1} color="gray">{getAppMenuHotkeyLabel('app-menu:edit.new')}</Typography>
+            <Typography sx={{ color: 'gray', ml: 1 }}>{getAppMenuHotkeyLabel('app-menu:edit.new')}</Typography>
           </MenuItem>
           <Divider />
           <MenuItem {...MenuItemProps} onClick={() => closeMenu(handleEditHistoryUndo)}>
             <Typography>{t('app-menu:edit.history.undo')}</Typography>
-            <Typography ml={1} color="gray">{getAppMenuHotkeyLabel('app-menu:edit.history.undo')}</Typography>
+            <Typography sx={{ color: 'gray', ml: 1 }}>{getAppMenuHotkeyLabel('app-menu:edit.history.undo')}</Typography>
           </MenuItem>
           <MenuItem {...MenuItemProps} onClick={() => closeMenu(handleEditHistoryRedo)}>
             <Typography>{t('app-menu:edit.history.redo')}</Typography>
-            <Typography ml={1} color="gray">{getAppMenuHotkeyLabel('app-menu:edit.history.redo')}</Typography>
+            <Typography sx={{ color: 'gray', ml: 1 }}>{getAppMenuHotkeyLabel('app-menu:edit.history.redo')}</Typography>
           </MenuItem>
           <Divider />
           <MenuItem {...MenuItemProps} onClick={() => closeMenu(handleEditCopy)}>
             <Typography>{t('app-menu:edit.copy')}</Typography>
-            <Typography ml={1} color="gray">{getAppMenuHotkeyLabel('app-menu:edit.copy')}</Typography>
+            <Typography sx={{ color: 'gray', ml: 1 }}>{getAppMenuHotkeyLabel('app-menu:edit.copy')}</Typography>
           </MenuItem>
           <MenuItem {...MenuItemProps} onClick={() => closeMenu(handleEditDelete)}>
             <Typography>{t('app-menu:edit.delete')}</Typography>
-            <Typography ml={1} color="gray">{getAppMenuHotkeyLabel('app-menu:edit.delete')}</Typography>
+            <Typography sx={{ color: 'gray', ml: 1 }}>{getAppMenuHotkeyLabel('app-menu:edit.delete')}</Typography>
           </MenuItem>
           <MenuItem {...MenuItemProps} onClick={() => closeMenu(handleEditPaste)}>
             <Typography>{t('app-menu:edit.paste')}</Typography>
-            <Typography ml={1} color="gray">{getAppMenuHotkeyLabel('app-menu:edit.paste')}</Typography>
+            <Typography sx={{ color: 'gray', ml: 1 }}>{getAppMenuHotkeyLabel('app-menu:edit.paste')}</Typography>
           </MenuItem>
           <MenuItem disabled={activeType === undefined} {...MenuItemProps} onClick={() => closeMenu(handleEditDuplicate)}>
             <Typography>{t('app-menu:edit.duplicate')}</Typography>
-            <Typography ml={1} color="gray">{getAppMenuHotkeyLabel('app-menu:edit.duplicate')}</Typography>
+            <Typography sx={{ color: 'gray', ml: 1 }}>{getAppMenuHotkeyLabel('app-menu:edit.duplicate')}</Typography>
           </MenuItem>
           <Divider />
           <MenuItem disabled={activeType === undefined} {...MenuItemProps} onClick={() => closeMenu(handleEditVisibilityToggle)}>
             <Typography>{t(activeIsVisible ? 'app-menu:edit.visibility.hide' : 'app-menu:edit.visibility.show')}</Typography>
-            <Typography ml={1} color="gray">{getAppMenuHotkeyLabel('app-menu:edit.visibility')}</Typography>
+            <Typography sx={{ color: 'gray', ml: 1 }}>{getAppMenuHotkeyLabel('app-menu:edit.visibility')}</Typography>
           </MenuItem>
           <MenuItem {...MenuItemProps} onClick={() => closeMenu(handleEditVisibilityAllShow)}>
             <Typography>{t('app-menu:edit.visibility.all.show')}</Typography>
@@ -115,7 +118,7 @@ export function AppMenuEditComponent({ handleEditCopy, handleEditDelete, handleE
           <Divider />
           <MenuItem {...MenuItemProps} onClick={() => closeMenu(handleEditTransform)}>
             <Typography>{t(projectState.transform ? 'app-menu:edit.transform.disable' : 'app-menu:edit.transform.enable')}</Typography>
-            <Typography ml={1} color="gray">{getAppMenuHotkeyLabel('app-menu:edit.transform')}</Typography>
+            <Typography sx={{ color: 'gray', ml: 1 }}>{getAppMenuHotkeyLabel('app-menu:edit.transform')}</Typography>
           </MenuItem>
         </MenuList>
       </Menu>

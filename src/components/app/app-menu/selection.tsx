@@ -1,10 +1,13 @@
-import { Button, ButtonProps, Divider, Menu, MenuItem, MenuItemProps, MenuList, MenuListProps, MenuProps, Typography } from '@mui/material'
-import { Project, ProjectState, RenderState } from '@woodcutapp/woodcutapp'
+/* eslint-disable react-hooks/refs */
+/* TODO: Fix this. */
+
+import { Button, type ButtonProps, Divider, Menu, MenuItem, type MenuItemProps, MenuList, type MenuListProps, type MenuProps, Typography } from '@mui/material'
+import { type Project, type ProjectState, type RenderState } from '@woodcutapp/woodcutapp'
 import { useCallback, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { getAppMenuHotkeyLabel } from '@/functions/app-menu-hotkeys'
-import { UseAppMenuReturn } from '@/hooks/app-menu'
+import { type UseAppMenuReturn } from '@/hooks/app-menu'
 
 interface AppMenuSelectionComponentProps extends Pick<UseAppMenuReturn, 'handleSelectionFind' | 'handleSelectionNext' | 'handleSelectionPrevious' | 'handleSelectionSelectAll' | 'handleSelectionSelectNone'> {
   project: Project
@@ -41,24 +44,24 @@ export function AppMenuSelectionComponent({ handleSelectionFind, handleSelection
         <MenuList {...MenuListProps}>
           <MenuItem {...MenuItemProps} onClick={() => closeMenu(handleSelectionSelectAll)}>
             <Typography>{t('app-menu:selection.select.all')}</Typography>
-            <Typography ml={1} color="gray">{getAppMenuHotkeyLabel('app-menu:selection.select.all')}</Typography>
+            <Typography sx={{ color: 'gray', ml: 1 }}>{getAppMenuHotkeyLabel('app-menu:selection.select.all')}</Typography>
           </MenuItem>
           <MenuItem {...MenuItemProps} onClick={() => closeMenu(handleSelectionSelectNone)}>
             <Typography>{t('app-menu:selection.select.none')}</Typography>
-            <Typography ml={1} color="gray">{getAppMenuHotkeyLabel('app-menu:selection.select.none')}</Typography>
+            <Typography sx={{ color: 'gray', ml: 1 }}>{getAppMenuHotkeyLabel('app-menu:selection.select.none')}</Typography>
           </MenuItem>
           <Divider />
           <MenuItem {...MenuItemProps} onClick={() => closeMenu(handleSelectionFind)}>
             <Typography>{t('app-menu:selection.find')}</Typography>
-            <Typography ml={1} color="gray">{getAppMenuHotkeyLabel('app-menu:selection.find')}</Typography>
+            <Typography sx={{ color: 'gray', ml: 1 }}>{getAppMenuHotkeyLabel('app-menu:selection.find')}</Typography>
           </MenuItem>
           <MenuItem {...MenuItemProps} onClick={() => closeMenu(handleSelectionPrevious)}>
             <Typography>{t('app-menu:selection.previous')}</Typography>
-            <Typography ml={1} color="gray">{getAppMenuHotkeyLabel('app-menu:selection.previous')}</Typography>
+            <Typography sx={{ color: 'gray', ml: 1 }}>{getAppMenuHotkeyLabel('app-menu:selection.previous')}</Typography>
           </MenuItem>
           <MenuItem {...MenuItemProps} onClick={() => closeMenu(handleSelectionNext)}>
             <Typography>{t('app-menu:selection.next')}</Typography>
-            <Typography ml={1} color="gray">{getAppMenuHotkeyLabel('app-menu:selection.next')}</Typography>
+            <Typography sx={{ color: 'gray', ml: 1 }}>{getAppMenuHotkeyLabel('app-menu:selection.next')}</Typography>
           </MenuItem>
         </MenuList>
       </Menu>

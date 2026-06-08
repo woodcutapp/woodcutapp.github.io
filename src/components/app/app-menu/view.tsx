@@ -1,11 +1,14 @@
+/* eslint-disable react-hooks/refs */
+/* TODO: Fix this. */
+
 import { ChevronRight } from '@mui/icons-material'
-import { Button, ButtonProps, Menu, MenuItem, MenuItemProps, MenuList, MenuListProps, MenuProps, Typography, useColorScheme, useMediaQuery } from '@mui/material'
-import { Project, projectGetActive, ProjectState, RenderState } from '@woodcutapp/woodcutapp'
+import { Button, type ButtonProps, Menu, MenuItem, type MenuItemProps, MenuList, type MenuListProps, type MenuProps, Typography, useColorScheme, useMediaQuery } from '@mui/material'
+import { type Project, projectGetActive, type ProjectState, type RenderState } from '@woodcutapp/woodcutapp'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { getAppMenuHotkeyLabel } from '@/functions/app-menu-hotkeys'
-import { UseAppMenuReturn } from '@/hooks/app-menu'
+import { type UseAppMenuReturn } from '@/hooks/app-menu'
 
 interface AppMenuViewComponentProps extends Pick<UseAppMenuReturn, 'handleViewActive' | 'handleViewActiveDimension' | 'handleViewActiveInfo' | 'handleViewActivePosition' | 'handleViewActiveRotation' | 'handleViewCamera' | 'handleViewDrawer' | 'handleViewFocused' | 'handleViewGrid' | 'handleViewGridAxis' | 'handleViewRuler' | 'handleViewRulerPointA' | 'handleViewRulerPointB' | 'handleViewRulerPointClear' | 'handleViewRulerSnap'> {
   project: Project
@@ -83,11 +86,11 @@ export function AppMenuViewComponent({ handleViewActive, handleViewActiveDimensi
         <MenuList {...MenuListProps}>
           <MenuItem {...MenuItemProps} onClick={() => closeMenu(handleViewCamera)}>
             <Typography>{t(renderState.camera[0] === 'orthographic' ? 'app-menu:view.camera.orthographic' : 'app-menu:view.camera.perspective')}</Typography>
-            <Typography ml={1} color="gray">{getAppMenuHotkeyLabel('app-menu:view.camera')}</Typography>
+            <Typography sx={{ color: 'gray', ml: 1 }}>{getAppMenuHotkeyLabel('app-menu:view.camera')}</Typography>
           </MenuItem>
           <MenuItem {...MenuItemProps} onClick={() => closeMenu(handleViewFocused)}>
             <Typography>{t(projectState.focused ? 'app-menu:view.focused.disable' : 'app-menu:view.focused.enable')}</Typography>
-            <Typography ml={1} color="gray">{getAppMenuHotkeyLabel('app-menu:view.focused')}</Typography>
+            <Typography sx={{ color: 'gray', ml: 1 }}>{getAppMenuHotkeyLabel('app-menu:view.focused')}</Typography>
           </MenuItem>
           <MenuItem {...MenuItemProps} ref={activeMenuItemRef} disabled={activeType === undefined} onClick={() => setActiveMenuOpen(true)}>
             <Typography>{t('app-menu:view.active')}</Typography>
@@ -95,7 +98,7 @@ export function AppMenuViewComponent({ handleViewActive, handleViewActiveDimensi
           </MenuItem>
           <MenuItem {...MenuItemProps} onClick={() => closeMenu(handleViewDrawer)}>
             <Typography>{t(projectState.drawer[0] ? 'app-menu:view.drawer.disable' : 'app-menu:view.drawer.enable')}</Typography>
-            <Typography ml={1} color="gray">{getAppMenuHotkeyLabel('app-menu:view.drawer')}</Typography>
+            <Typography sx={{ color: 'gray', ml: 1 }}>{getAppMenuHotkeyLabel('app-menu:view.drawer')}</Typography>
           </MenuItem>
           <MenuItem {...MenuItemProps} ref={gridMenuItemRef} onClick={() => setGridMenuOpen(true)}>
             <Typography>{t(renderState.grid[0] ? 'app-menu:view.grid.enabled' : 'app-menu:view.grid.disabled')}</Typography>
@@ -121,23 +124,23 @@ export function AppMenuViewComponent({ handleViewActive, handleViewActiveDimensi
           <MenuList {...MenuListProps}>
             <MenuItem {...MenuItemProps} onClick={() => closeMenu(handleViewActive)}>
               <Typography>{t(projectState.active[0] ? 'app-menu:view.active.disable' : 'app-menu:view.active.enable')}</Typography>
-              <Typography ml={1} color="gray">{getAppMenuHotkeyLabel('app-menu:view.active')}</Typography>
+              <Typography sx={{ color: 'gray', ml: 1 }}>{getAppMenuHotkeyLabel('app-menu:view.active')}</Typography>
             </MenuItem>
             <MenuItem {...MenuItemProps} onClick={() => closeMenu(handleViewActiveInfo)}>
               <Typography>{t('app-menu:view.active.info')}</Typography>
-              <Typography ml={1} color="gray">{getAppMenuHotkeyLabel('app-menu:view.active.info')}</Typography>
+              <Typography sx={{ color: 'gray', ml: 1 }}>{getAppMenuHotkeyLabel('app-menu:view.active.info')}</Typography>
             </MenuItem>
             <MenuItem {...MenuItemProps} onClick={() => closeMenu(handleViewActiveDimension)}>
               <Typography>{t('app-menu:view.active.dimension')}</Typography>
-              <Typography ml={1} color="gray">{getAppMenuHotkeyLabel('app-menu:view.active.dimension')}</Typography>
+              <Typography sx={{ color: 'gray', ml: 1 }}>{getAppMenuHotkeyLabel('app-menu:view.active.dimension')}</Typography>
             </MenuItem>
             <MenuItem {...MenuItemProps} onClick={() => closeMenu(handleViewActivePosition)}>
               <Typography>{t('app-menu:view.active.position')}</Typography>
-              <Typography ml={1} color="gray">{getAppMenuHotkeyLabel('app-menu:view.active.position')}</Typography>
+              <Typography sx={{ color: 'gray', ml: 1 }}>{getAppMenuHotkeyLabel('app-menu:view.active.position')}</Typography>
             </MenuItem>
             <MenuItem {...MenuItemProps} onClick={() => closeMenu(handleViewActiveRotation)}>
               <Typography>{t('app-menu:view.active.rotation')}</Typography>
-              <Typography ml={1} color="gray">{getAppMenuHotkeyLabel('app-menu:view.active.rotation')}</Typography>
+              <Typography sx={{ color: 'gray', ml: 1 }}>{getAppMenuHotkeyLabel('app-menu:view.active.rotation')}</Typography>
             </MenuItem>
           </MenuList>
         </Menu>
@@ -153,7 +156,7 @@ export function AppMenuViewComponent({ handleViewActive, handleViewActiveDimensi
           <MenuList {...MenuListProps}>
             <MenuItem {...MenuItemProps} onClick={() => closeMenu(handleViewGrid)}>
               <Typography>{t(renderState.grid[0] ? 'app-menu:view.grid.disable' : 'app-menu:view.grid.enable')}</Typography>
-              <Typography ml={1} color="gray">{getAppMenuHotkeyLabel('app-menu:view.grid')}</Typography>
+              <Typography sx={{ color: 'gray', ml: 1 }}>{getAppMenuHotkeyLabel('app-menu:view.grid')}</Typography>
             </MenuItem>
             <MenuItem {...MenuItemProps} ref={gridXMenuItemRef} onClick={() => setGridXMenuOpen(true)}>
               <Typography>{t('app-menu:view.grid.x')}</Typography>
@@ -256,23 +259,23 @@ export function AppMenuViewComponent({ handleViewActive, handleViewActiveDimensi
           <MenuList {...MenuListProps}>
             <MenuItem {...MenuItemProps} onClick={() => closeMenu(handleViewRuler)}>
               <Typography>{t(renderState.ruler[0] ? 'app-menu:view.ruler.disable' : 'app-menu:view.ruler.enable')}</Typography>
-              <Typography ml={1} color="gray">{getAppMenuHotkeyLabel('app-menu:view.ruler')}</Typography>
+              <Typography sx={{ color: 'gray', ml: 1 }}>{getAppMenuHotkeyLabel('app-menu:view.ruler')}</Typography>
             </MenuItem>
             <MenuItem {...MenuItemProps} onClick={() => closeMenu(handleViewRulerSnap)}>
               <Typography>{t(renderState.ruler[1] ? 'app-menu:view.ruler.snap.disable' : 'app-menu:view.ruler.snap.enable')}</Typography>
-              <Typography ml={1} color="gray">{getAppMenuHotkeyLabel('app-menu:view.ruler.snap')}</Typography>
+              <Typography sx={{ color: 'gray', ml: 1 }}>{getAppMenuHotkeyLabel('app-menu:view.ruler.snap')}</Typography>
             </MenuItem>
             <MenuItem {...MenuItemProps} onClick={() => closeMenu(handleViewRulerPointA)}>
               <Typography>{t('app-menu:view.ruler.point.a')}</Typography>
-              <Typography ml={1} color="gray">{getAppMenuHotkeyLabel('app-menu:view.ruler.points.a')}</Typography>
+              <Typography sx={{ color: 'gray', ml: 1 }}>{getAppMenuHotkeyLabel('app-menu:view.ruler.points.a')}</Typography>
             </MenuItem>
             <MenuItem {...MenuItemProps} onClick={() => closeMenu(handleViewRulerPointB)}>
               <Typography>{t('app-menu:view.ruler.point.b')}</Typography>
-              <Typography ml={1} color="gray">{getAppMenuHotkeyLabel('app-menu:view.ruler.points.b')}</Typography>
+              <Typography sx={{ color: 'gray', ml: 1 }}>{getAppMenuHotkeyLabel('app-menu:view.ruler.points.b')}</Typography>
             </MenuItem>
             <MenuItem {...MenuItemProps} onClick={() => closeMenu(handleViewRulerPointClear)}>
               <Typography>{t('app-menu:view.ruler.point.clear')}</Typography>
-              <Typography ml={1} color="gray">{getAppMenuHotkeyLabel('app-menu:view.ruler.points.clear')}</Typography>
+              <Typography sx={{ color: 'gray', ml: 1 }}>{getAppMenuHotkeyLabel('app-menu:view.ruler.points.clear')}</Typography>
             </MenuItem>
           </MenuList>
         </Menu>

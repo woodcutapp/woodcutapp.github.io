@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo } from 'react'
 
 import { getAppMenuHotkeys } from '@/functions/app-menu-hotkeys'
 import { useActiveElement } from '@/hooks/active-element'
-import { UseAppMenuReturn } from '@/hooks/app-menu'
+import { type UseAppMenuReturn } from '@/hooks/app-menu'
 
 export function useAppMenuHotkeys(handlers: UseAppMenuReturn) {
   const { activeElement } = useActiveElement()

@@ -1,6 +1,6 @@
 import { Stack, useTheme } from '@mui/material'
 import { calculate_cutlist, export_cutlist, export_project } from '@woodcutapp/wasm'
-import { assertIsCutlist, check, generateProjectState, generateRenderState, ProjectComponent, ProjectState, RenderState, cutlistChange, assertIsBoard, projectGetCutlist, getWoodImage } from '@woodcutapp/woodcutapp'
+import { assertIsBoard, assertIsCutlist, check, cutlistChange, generateProjectState, generateRenderState, getWoodImage, ProjectComponent, projectGetCutlist, type ProjectState, type RenderState } from '@woodcutapp/woodcutapp'
 import { useCallback, useEffect, useState } from 'react'
 
 import { AlertsComponent } from '@/components/app/alerts'
@@ -30,14 +30,18 @@ export function AppComponent() {
 
       cutlist.options.seed = Math.floor(Math.random() * 1000000)
 
-      const result = await calculate_cutlist(cutlist)
+      // eslint-disable-next-line no-console
+      console.log('Calculating cutlist with options:', cutlist)
+
+      const result: unknown = await calculate_cutlist(cutlist)
       if (check(result, assertIsCutlist)) projectSet(cutlistChange(project, cutlistIndex, result))
       else if (check(result, assertIsBoard)) throw Error(`Unable to fit board: ${result.name}`)
       else if (result instanceof Error) throw result
       else throw Error('Unknown error.')
     }
     catch (error) {
-      alert(`Error: ${error}`)
+      const message = error instanceof Error ? error.message : String(error)
+      alert(`Error: ${message}`)
     }
   }, [project])
 
@@ -48,10 +52,10 @@ export function AppComponent() {
 
     const woodImage = getWoodImage(cutlist.boardType.type)
     const image = await fetch(woodImage).then(response => response.arrayBuffer())
-    const result = await export_cutlist(cutlist, project.settings.measurement, new Uint8Array(image))
+    const result = export_cutlist(cutlist, project.settings.measurement, new Uint8Array(image)) as Uint8Array<ArrayBuffer>
 
     const blob = new Blob([result], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' })
-    downloadFile(blob, `${cutlist.name}.xlsx`)
+    void downloadFile(blob, `${cutlist.name}.xlsx`)
   }, [project])
 
   const exportProject = useCallback(async () => {
@@ -63,19 +67,21 @@ export function AppComponent() {
       images.push(new Uint8Array(image))
     }
 
-    const result = await export_project(project, images)
+    const result = export_project(project, images) as Uint8Array<ArrayBuffer>
     const blob = new Blob([result], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' })
     await downloadFile(blob, `${project.name}.xlsx`)
   }, [project])
 
   useEffect(() => {
     if (project.settings.bounds !== renderState.bounds) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       renderStateSet({ ...renderState, bounds: project.settings.bounds })
     }
   }, [project, renderState])
 
   useEffect(() => {
     if (project.settings.measurement !== renderState.grid[1]) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       renderStateSet({
         ...renderState,
         grid: [
@@ -91,6 +97,7 @@ export function AppComponent() {
 
   useEffect(() => {
     const position: [number, number, number] = [0, -(project.settings.bounds * 2), (project.settings.bounds / 2)]
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     renderStateSet(state => ({
       ...state,
       camera: [
@@ -109,6 +116,7 @@ export function AppComponent() {
   }, [project.settings.bounds])
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     renderStateSet(state => ({
       ...state,
       viewcube: [

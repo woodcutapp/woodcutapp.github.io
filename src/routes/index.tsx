@@ -18,7 +18,7 @@ function Home() {
       <NavigationComponent />
       <Container component="main" sx={{ flexGrow: 1, py: 8 }}>
         <Stack spacing={8}>
-          <Grid container alignItems="center" spacing={4}>
+          <Grid container spacing={4} sx={{ alignItems: 'center' }}>
             <Grid size={{ xs: 12, md: 6 }}>
               <Stack spacing={4}>
                 <Stack direction="row" spacing={2}>
@@ -48,14 +48,14 @@ function Home() {
               <img src="/images/dresser.png" width="100%" />
             </Grid>
           </Grid>
-          <Stack spacing={4} textAlign="center">
+          <Stack spacing={4} sx={{ textAlign: 'center' }}>
             <Typography variant="h2">{t('home:features')}</Typography>
             <FeaturesComponent />
           </Stack>
-          <Stack spacing={4} textAlign="center">
+          <Stack spacing={4} sx={{ textAlign: 'center' }}>
             <Typography variant="h2">{t('home:help')}</Typography>
             <Typography>{t('home:help.text')}</Typography>
-            <Stack direction="row" spacing={2} justifyContent="center">
+            <Stack direction="row" spacing={2} sx={{ justifyContent: 'center' }}>
               <Button
                 color="primary"
                 endIcon={<GitHub />}
