@@ -625,54 +625,48 @@ function migrateCutlistsFromVersion1(value: unknown): Project['cutlists'] {
 }
 
 export function migrateProject(value: unknown): Project {
-  if (isObject(value) && value.version === 1) {
-    const project = migrateVersion1Project(value)
-
-    // eslint-disable-next-line no-console
-    console.warn('Migrated version 1 project:', { input: value, output: project })
-
-    assertIsProject(project)
-    return project
-  }
-
-  // Normalize unknown project-like objects into a valid Project shape so
-  // downstream `assertIsProject` checks do not throw when optional pieces
-  // like `cutlists` are missing. Use helper accessors to avoid `as any`.
-  if (isObject(value)) {
-    const v = value
-    const settings = asRecord(v.settings) ?? {}
-    const defaults = asRecord(settings.defaults) ?? {}
-
-    const normalized = {
-      components: asArray<Record<string, unknown>>(v.components),
-      cutlists: asArray<Record<string, unknown>>(v.cutlists),
-      name: typeof v.name === 'string' ? v.name : '',
-      notes: typeof v.notes === 'string' ? v.notes : '',
-      settings: {
-        bounds: safeNumber(settings.bounds, 0),
-        defaults: {
-          board: asRecord(defaults.board) ?? null,
-          component: asRecord(defaults.component) ?? null,
-          cut: asRecord(defaults.cut) ?? null,
-        },
-        measurement: settings.measurement === 'metric' ? 'metric' : 'imperial',
-        step: safeNumber(settings.step, 1),
-      },
-      version: typeof v.version === 'number' ? v.version : 0,
+  try {
+    if (isObject(value) && value.version === 1) {
+      const project = migrateVersion1Project(value)
+      assertIsProject(project)
+      return project
     }
 
-    // eslint-disable-next-line no-console
-    console.warn('Migrated normalized project:', { input: value, output: normalized })
+    // Normalize unknown project-like objects into a valid Project shape so
+    // downstream `assertIsProject` checks do not throw when optional pieces
+    // like `cutlists` are missing. Use helper accessors to avoid `as any`.
+    if (isObject(value)) {
+      const v = value
+      const settings = asRecord(v.settings) ?? {}
+      const defaults = asRecord(settings.defaults) ?? {}
 
-    assertIsProject(normalized)
+      const normalized = {
+        components: asArray<Record<string, unknown>>(v.components),
+        cutlists: asArray<Record<string, unknown>>(v.cutlists),
+        name: typeof v.name === 'string' ? v.name : '',
+        notes: typeof v.notes === 'string' ? v.notes : '',
+        settings: {
+          bounds: safeNumber(settings.bounds, 0),
+          defaults: {
+            board: asRecord(defaults.board) ?? null,
+            component: asRecord(defaults.component) ?? null,
+            cut: asRecord(defaults.cut) ?? null,
+          },
+          measurement: settings.measurement === 'metric' ? 'metric' : 'imperial',
+          step: safeNumber(settings.step, 1),
+        },
+        version: typeof v.version === 'number' ? v.version : 0,
+      }
 
-    return normalized
+      assertIsProject(normalized)
+
+      return normalized
+    }
+
+    throw new Error('Project is not an object.')
   }
-
-  // eslint-disable-next-line no-console
-  console.warn('Non-migrated project:', value)
-
-  assertIsProject(value)
-
-  return value
+  catch {
+    assertIsProject(value)
+    return value
+  }
 }
